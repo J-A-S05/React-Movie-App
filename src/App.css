@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body{
+  background-color: #141414;
   color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.body-before{
+  height: 90vh;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.body-before > div{
+  height: 90vh;
+  width: 100%;
+  scroll-snap-align : center;
 }
+
+
+
+.movie-app > .row{
+  overflow-x : scroll;
+  /* scroll-snap-type: x mandatory; */
+  flex-wrap :wrap;
+}
+
+.image-container{
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.image-container img{
+  border-radius: 30px;
+  /* scroll-snap-align: center; */
+  max-width: 40vh;
+}
+
+.image-container:hover{
+  transform: scale(1.1);
+}
+
+.image-container:hover .overlay{
+  opacity: 0.8;
+  
+}
+
+.overlay{
+  position: absolute;
+  background-color: rgba(0,0,0,1);
+  height: 100%;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  bottom: 0;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.movie-app > .row::-webkit-scrollbar {
+  display: none;
+}
+
+.card-text{
+  font-size: small;
+}
+
+
+/* .movie-app::before{
+ 
+} */
+
+
+
